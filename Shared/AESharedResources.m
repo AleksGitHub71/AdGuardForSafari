@@ -36,6 +36,7 @@
 #define NOTIFICATION_BUSY                       AG_BUNDLEID @".notify.busy"
 #define NOTIFICATION_VERBOSE_LOGGING            AG_BUNDLEID @".notify.verbose"
 #define NOTIFICATION_SHOW_PREFS                 AG_BUNDLEID @".notify.showprefs"
+#define NOTIFICATION_ADD_CUSTOM_FILTER          AG_BUNDLEID @".notify.addcustom"
 #define NOTIFICATION_READY                      AG_BUNDLEID @".notify.ready"
 #define NOTIFICATION_REPORT                     AG_BUNDLEID @".notify.report"
 #define NOTIFICATION_ADVANCED_BLOCKING          AG_BUNDLEID @".notify.advancedblocking"
@@ -226,9 +227,22 @@ static AESListenerBlock _onAllExtensionEnabledRequestBlock;
         CFNotificationCenterPostNotification(CFNotificationCenterGetDarwinNotifyCenter(), (CFStringRef)NOTIFICATION_SHOW_PREFS, NULL, NULL, YES);
     });
 }
+
+// TODO (maximtop): how to pass variables
++ (void)notifyAddCustomFilter {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        CFNotificationCenterPostNotification(CFNotificationCenterGetDarwinNotifyCenter(), (CFStringRef)NOTIFICATION_ADD_CUSTOM_FILTER, NULL, NULL, YES);
+    });
+}
+
 + (void)setListenerOnShowPreferences:(AESListenerBlock)block {
     [self setListenerForNotification:NOTIFICATION_SHOW_PREFS
                                block:block];
+}
+
+// TODO (maximtop): how to pass variables
++ (void)setListenerOnAddCustomFilter:(AESListenerBlock)block {
+    [self setListenerForNotification:NOTIFICATION_ADD_CUSTOM_FILTER block:block];
 }
 
 + (void)notifyReady {

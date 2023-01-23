@@ -173,6 +173,10 @@ extern NSString * const AEDefaultsAllowlistInverted;
  */
 + (void)notifyShowPreferences;
 /**
+ Notifies, that user clicked to subscribe link to add custom filter
+ */
++ (void)notifyAddCustomFilter;
+/**
  Register listener for show preferences.
 
  @param block Performed on internal thread when catched notification.

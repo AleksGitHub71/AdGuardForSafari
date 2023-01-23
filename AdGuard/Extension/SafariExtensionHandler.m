@@ -93,7 +93,13 @@ static BOOL _mainAppReady;
                 }];
             }
         }
-
+        else if ([messageName isEqualToString:@"addFilterSubscription"]) {
+            NSString *url = userInfo[@"url"];
+            NSString *title = userInfo[@"title"];
+            DDLogInfo(@"AG: Adding custom filter with url: %@, and title: %@", url, title);
+            // TODO (maximtop): how to pass arguments?
+            [AESharedResources notifyAddCustomFilter];
+        }
     }
 }
 
