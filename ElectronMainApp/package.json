@@ -32,7 +32,7 @@
         "electron-store": "^5.0.0",
         "electron-updater": "^4.3.8",
         "i18n": "^0.8.3",
-        "safari-converter-lib": "git+https://github.com/AdguardTeam/SafariConverterLib.git#73147b2e3f2e81fe029121997a6307f2149a9bc5",
+        "safari-converter-lib": "git+https://github.com/AdguardTeam/SafariConverterLib.git#1b81c2830e7313bedf19ac7776e4eb627b1f95b0",
         "safari-ext": "./safari-ext",
         "sprintf-js": "^1.1.2",
         "xmlhttprequest": "^1.8.0"
