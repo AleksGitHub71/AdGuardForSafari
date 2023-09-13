@@ -250,10 +250,12 @@ function showWindow(onWindowLoaded) {
             onWindowLoaded();
         }
     } else {
-        app.dock.show();
+        (async () => {
+            await app.dock.show();
 
-        loadMainWindow(onWindowLoaded);
-        uiEventListener.register(mainWindow);
+            loadMainWindow(onWindowLoaded);
+            uiEventListener.register(mainWindow);
+        })();
     }
 }
 
